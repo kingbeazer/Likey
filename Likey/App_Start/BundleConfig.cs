@@ -23,7 +23,7 @@ namespace Likey
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/superhero.css",
                       "~/Content/site.css"));
         }
     }
