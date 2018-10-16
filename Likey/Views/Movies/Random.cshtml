@@ -1,0 +1,29 @@
+﻿@model Likey.Viewmodels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Movie.Name</h2>
+
+@if (Model.Users.Count == 0)
+
+{
+<text>No users</text>
+}
+else
+{
+
+<ul>
+
+
+@foreach (var user in Model.Users)
+{
+   <li>
+       @user.Name
+   </li> 
+}
+</ul>
+}
+
+
