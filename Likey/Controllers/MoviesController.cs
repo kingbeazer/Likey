@@ -17,7 +17,8 @@ namespace Likey.Controllers
             var users = new List<User>
             {
                 new User { Name = "Al"},
-                new User { Name = "Gill"}
+                new User { Name = "Gill"},
+                new User { Name = "Kev"}
             };
 
             var viewModel = new RandomMovieViewModel
