@@ -196,13 +196,28 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LikesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810162120112_InititalModel.cs" />
+    <Compile Include="Migrations\201810162120112_InititalModel.Designer.cs">
+      <DependentUpon>201810162120112_InititalModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810162137392_AddLikes.cs" />
+    <Compile Include="Migrations\201810162137392_AddLikes.Designer.cs">
+      <DependentUpon>201810162137392_AddLikes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810162141407_ApplyAnnotationsToMovieName.cs" />
+    <Compile Include="Migrations\201810162141407_ApplyAnnotationsToMovieName.Designer.cs">
+      <DependentUpon>201810162141407_ApplyAnnotationsToMovieName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Like.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\User.cs" />
@@ -271,9 +286,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Likes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -287,6 +304,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810162120112_InititalModel.resx">
+      <DependentUpon>201810162120112_InititalModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810162137392_AddLikes.resx">
+      <DependentUpon>201810162137392_AddLikes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810162141407_ApplyAnnotationsToMovieName.resx">
+      <DependentUpon>201810162141407_ApplyAnnotationsToMovieName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
