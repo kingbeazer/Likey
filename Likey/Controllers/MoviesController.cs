@@ -11,9 +11,25 @@ namespace Likey.Controllers
     public class MoviesController : Controller
     {
         // GET: Movies
+ 
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         public ViewResult Random()
         {
             var movie = new Movie() { Name = "Shrek" };
+
+            var likes = _context.Likes;
+ 
             var users = new List<User>
             {
                 new User { Name = "Al"},
@@ -33,13 +49,13 @@ namespace Likey.Controllers
             return Content("id = " + id);
         }
 
-        public ActionResult Index(int? pageIndex, string sortBy)
+ 
+        public ActionResult List(int? pageIndex, string sortBy)
         {
-            if (!pageIndex.HasValue)
-                pageIndex = 1;
-            if (string.IsNullOrWhiteSpace(sortBy))
-                sortBy = "Name";
-            return Content(string.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
+            var movies = _context.Movies.ToList();
+
+            return View(movies);
+ 
 
         }
 

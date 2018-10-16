@@ -7,6 +7,7 @@
 *.exe
 *.pdb
 .vs/
+App_Data/
 *.dll.config
 *.cache
 *.suo

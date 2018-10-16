@@ -1,0 +1,21 @@
+﻿@model List<Likey.Models.Movie>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<ul>
+
+
+    @foreach (var movie in Model)
+    {
+        <li>
+            @movie.Name
+        </li>
+    }
+</ul>
+
+
